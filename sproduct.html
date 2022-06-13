@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/058ad06ee2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Icons+Outlined" />
+    
+</head>
+<body>
+    <section id="header">
+        <a href="index.html">ESWARAMOORTHY TEXTILES</a>
+        <div>
+            <ul id="navbar" class="navbar" >
+                <li><a  href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a  href="cart.html" id="lg-bag"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times-circle"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            <i class="fas fa-bars bar"></i></button>
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <h1 style="display: none;"id="prodet">Hello</h1>
+        <!-- <div class="single-pro-image">
+            <img src="products/s1/saree1.jpg" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="products/s1/saree1.jpg" width="100%" alt="" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="products/s1/saree2.jpg" width="100%" alt="" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="products/s1/saree3.jpg" width="100%" alt="" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="products/s1/saree4.jpg" width="100%" alt="" class="small-img">
+                </div>
+
+            </div>
+        </div> -->
+        <!-- <div class="single-pro-details">
+            <h5>Home / Products</h5>
+            <h4 class="cloth-type" id="pro_name">Fashion clothings</h4>
+            <h2 style="float: left;">Price : </h2><h2 class="cloth-price" id="pro_price" style="float: left;">1</h2><h2> /-</h2>
+            <select id="select">
+                <option>Select size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+            </select>
+            <input type="number" value="1" id="int">
+            <a  href="#" id="a"><button class="normal" onclick="buyNow()">Buy now</button></a>
+            <button onclick="addToCart()" class="normal">Add to cart</button>
+            
+            <h4>Product details</h4>
+            <span>
+                Brand :- Ben Martin , Style :- Classic collar Shirt , Fabric :- Cotton
+                Colour :- Blush Pink , Size :- Large , Fit :-Slim Fit
+                Closure :- Button , Sleeve Type :- Long Sleeve , Occasion :- Casual , Pocket :- 1 Pocket
+                100% cotton - Best product in the market - Best price - Washable: Hand-Wash and it is even machine washable, so you just need to toss it in the washing machine and relax
+            </span>
+
+        </div> -->
+
+
+    </section>
+
+    <!-- <section id="product1" class="section-p1">
+        <h2>Featured products</h2>
+        <p>Summer Collection new modern designs</p>
+        <div class="pro-container">  
+
+            <div class="pro" onclick="window.location.href='sproduct.html'">
+                <img src="img/products/f1.jpg">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>XXXXXXXXXXXXX</h5>
+                    <div class="star">
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+
+                    </div>
+                    <h4>Rs 100/-</h4>
+                    <a href="#"><span class="material-icons-outlined">
+                        shopping_cart
+                        </span></a>
+
+                </div>
+            </div>
+
+            <div class="pro" onclick="window.location.href='sproduct.html'">
+                <img src="img/products/f1.jpg">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>XXXXXXXXXXXXX</h5>
+                    <div class="star">
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+
+                    </div>
+                    <h4>Rs 100/-</h4>
+                    <a href="#"><span class="material-icons-outlined">
+                        shopping_cart
+                        </span></a>
+
+                </div>
+            </div>
+
+            <div class="pro"onclick="window.location.href='sproduct.html'">
+                <img src="img/products/f1.jpg">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>XXXXXXXXXXXXX</h5>
+                    <div class="star">
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+
+                    </div>
+                    <h4>Rs 100/-</h4>
+                    <a href="#"><span class="material-icons-outlined">
+                        shopping_cart
+                        </span></a>
+                </div>
+            </div>
+
+            <div class="pro" onclick="window.location.href='sproduct.html'">
+                <img src="img/products/f1.jpg">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>XXXXXXXXXXXXX</h5>
+                    <div class="star">
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+                        <span class="material-icons-outlined">
+                            star
+                        </span>
+
+                    </div>
+                    <h4>Rs 100/-</h4>
+                    <a href="#"><span class="material-icons-outlined">
+                        shopping_cart
+                        </span></a>
+                </div>
+            </div>
+
+        </div>
+
+    </section> -->
+
+    <footer class="section-p1">
+        <div class="col">
+            <a href="index.html">ESWARAMOORTHY TEXTILES</a>
+            <h4>Contact</h4>
+            <p><strong>Address : </strong>PS Park,Erode-638002.</p>
+            <p><strong>Phone : </strong>+91 9788602451</p>
+            <p><strong>Hours : </strong>9.00am - 18.00pm</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icons">
+                    <span class="material-icons-outlined">
+                        email
+                        </span>
+                    <a href="+919788602451"><span class="material-icons-outlined">
+                        phone
+                        </span></a>
+                </div>
+
+            </div>
+        </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+            <div class="col">
+                <h4>Help</h4>
+                <a href="cart.html">View cart</a>
+                <a href="#">Help</a>
+
+            </div>
+
+    </footer>
+    
+    <div class="copyright">
+        <p><i class="fas fa-copyright"></i> 2022 ESWARAMOORTHY TEXTILES</p>
+
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+
+        //localStorage.clear();
+
+       function checkNumber(x) {
+
+        // check if the passed value is a number
+        if(typeof x == 'number' && !isNaN(x)){
+
+            // check if it is integer
+            if (Number.isInteger(x)) {
+                return false;
+            }
+            else {
+                return true
+            }
+
+        } else {
+            return true;
+        }
+        }
+
+        function addToCart(){
+            var name=document.getElementById('pro_name');
+            var price=document.getElementById('pro_price');
+            var quan=document.getElementById('int');
+            var sel=document.getElementById('select');
+            var selected=sel.options[sel.selectedIndex].text;
+            if(0==parseInt(quan.value) || selected=="Select size")
+            {
+                alert("Invalid order details");
+                return;
+            }
+            else if(checkNumber(parseFloat(quan.value)))
+            {
+                alert("Invalid order details");
+                return;
+            }
+
+
+
+            console.log(name.innerText+" "+price.innerText+" "+quan.value+" "+selected);
+            let proObj={
+                name:name.innerText,
+                price:price.innerText,
+                quan:quan.value,
+                size:selected
+            }
+            var temp=-1;
+            var keys=Object.keys(localStorage);
+            
+            for(let i=0;i<keys.length;i++)
+            {
+                if(!isNaN(keys[i]))
+                {
+                if(temp<localStorage.key(i))
+                {
+                     temp=localStorage.key(i);
+                }
+            }
+            }
+
+            if(localStorage.length==0)
+            {
+                localStorage.setItem(0,JSON.stringify(proObj));
+                return;
+            }
+            localStorage.setItem(parseInt(temp)+1,JSON.stringify(proObj));
+            alert("Product successfully added to the cart...!!!")
+            
+        }
+        
+        function buyNow(){
+        var sel=document.getElementById('select');
+        var selected=sel.options[sel.selectedIndex].text;
+        var name=document.getElementById('pro_name').innerText;
+        
+        let q=document.getElementById('int').value;
+
+        var body="Product Name : "+name+"<br/>Size : "+selected+"<br/>Quantity : "+q;
+        if(0==parseInt(q) || selected=="Select size")
+        {
+            alert("Invalid order details");
+        }
+        else
+        {
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "balakumarane.19ece@kongu.edu",
+                Password : "F5FE5CCCFBA0F45C8692D9F0A86EB0DED089",
+                To : 'balakumaran242002@gmail.com',
+                From : 'balakumaran242002@gmail.com',
+                Subject : "New order details",
+                Body : body
+            }).then(
+            message => console.log(message)
+            ).catch(err=>console.log(err))
+            var a=document.getElementById('a');
+            if(name.includes("Women's Kanchipuram"))
+            {
+            a.setAttribute('href','https://rzp.io/l/Zl4r24U');
+            }
+            if(name.includes("Women's Mysore"))
+            {
+            a.setAttribute('href','https://rzp.io/l/0B9nbn7H');
+            }
+            if(name.includes("Women's Soft Cotton"))
+            {
+            a.setAttribute('href','https://rzp.io/l/zYokDXU');
+            }
+            if(name.includes("Van Heusen Men's"))
+            {
+            a.setAttribute('href','https://rzp.io/l/fXvZwm9eZ');
+            }
+            if(name.includes("Allen Solly Men's"))
+            {
+            a.setAttribute('href','https://rzp.io/l/ZWCiH2oRF');
+            }
+            if(name.includes("Peter England Men's"))
+            {
+            a.setAttribute('href','https://rzp.io/l/MU1SN5myy');
+            }
+            if(name.includes("Cotton 6 Piece Men's"))
+            {
+            a.setAttribute('href','https://rzp.io/l/be3qf7JH');
+            }
+            if(name.includes("Women's Cotton Flower"))
+            {
+            a.setAttribute('href','https://rzp.io/l/Tjtrjg0P');
+            }
+            if(name.includes("White subtle colour"))
+            {
+            a.setAttribute('href','https://rzp.io/l/sQ1X8QnT');
+            }
+            if(name.includes("Cotton Premium Collection"))
+            {
+            a.setAttribute('href','https://rzp.io/l/hsWrCsKSC');
+            }
+        }
+        }
+
+    </script>
+
+
+    <script src="script.js"></script>
+    <script>
+
+        var proname=JSON.parse(localStorage.getItem('pro'));
+        var pr=JSON.parse(localStorage.getItem('price'));
+        var img=JSON.parse(localStorage.getItem('img'));
+        var a=document.getElementById('prodet');
+        a.insertAdjacentHTML('beforebegin',`<div class="single-pro-image">
+            <img src="${img}" width="100%" id="MainImg" alt="">
+        </div>`);
+        a.insertAdjacentHTML("beforebegin",`<div class="single-pro-details">
+            <h5>Home / Products</h5>
+            <h4 class="cloth-type" id="pro_name">${proname}</h4>
+            <h2 style="float: left;">Price : &nbsp</h2><h2 class="cloth-price" id="pro_price" style="float: left;">${parseInt(pr)}</h2><h2>&nbsp;/-</h2>
+            <select id="select">
+                <option>Select size</option>
+                <option>XL</option>
+                <option>XXL</option>
+                <option>Small</option>
+                <option>Large</option>
+                <option>NA</option>
+            </select>
+            <input type="number" value="1" id="int">
+            <a  href="#" id="a"><button class="normal" onclick="buyNow()">Buy now</button></a>
+            <button onclick="addToCart()" class="normal">Add to cart</button>
+        </div>`)
+    </script>
+</body>
+</html>

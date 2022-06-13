@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Payment Page</title>
+    <script src="https://kit.fontawesome.com/058ad06ee2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body onload="addNew()">
+    <section id="header">
+        <a href="index.html">ESWARAMOORTHY TEXTILES</a>
+        <div>
+            <ul id="navbar" class="navbar" >
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="cart.html" id="lg-bag"><i class="fas fa-shopping-bag"></i></a></li>
+                <a href="#" id="close"><i class="fas fa-times-circle"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            <i class="fas fa-bars bar"></i></button>
+        </div>
+    </section>
+
+    <section class="page-header about-header">
+        
+        <h2>#Your's cart</h2>
+        
+        <p>Add to cart and proceed to pay to get your order</p>
+        
+
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%" class="table_data">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <!-- <td>Id</td> -->
+                    <td>Product</td>
+                    <td>Size</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- <tr>
+                    <td><a href="#" onclick="deleteEle(this)"><i class="far fa-times-circle"></i></a></td>
+                    <td>Cartoon Animated T-shirts</td>
+                    <td>Rs 500/-</td>
+                    <td><input type="number" value="1"></td>
+                    <td>Rs 500/-</td>
+                </tr> -->
+            </tbody>
+        </table>
+
+    </section>
+    
+    <section id="cart-add" class="section-p1" >
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" id="coupon-code" placeholder="Enter your Coupon">
+                <button class="normal" onclick="offer()">Apply</button>
+            </div>
+
+        </div>
+        <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>Rs <span id="price-tag"></span>/-</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>Rs <span id="total-price-tag"></span>/-<span id="applied"></span></strong></td>
+                </tr>
+
+            </table>
+            <div style="display: flex;flex-direction:column;">
+                <h4 style="color: red;" id="alert">Please pay to place the order...!!!</h4><br>
+           </div>
+           <div id="pay">
+            <button style="display: block;" class="normal"id="rzp-button1">Pay</button>
+           </div>
+                 
+            
+
+        </div>
+
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <a href="index.html">ESWARAMOORTHY TEXTILES</a>
+            <h4>Contact</h4>
+            <p><strong>Address : </strong>PS Park,Erode-638002.</p>
+            <p><strong>Phone : </strong>+91 9788602451</p>
+            <p><strong>Hours : </strong>9.00am - 18.00pm</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icons">
+                    <span class="material-icons-outlined">
+                        email
+                        </span>
+                    <a href="+919788602451"><span class="material-icons-outlined">
+                        phone
+                        </span></a>
+                </div>
+
+            </div>
+        </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About us</a>
+                <a href="contact.html">Contact Us</a>
+
+            </div>
+            <div class="col">
+                <h4>Help</h4>
+                <a href="cart.html">View cart</a>
+                <a href="#">Help</a>
+
+            </div>
+
+    </footer>
+    
+    <div class="copyright">
+        <p><i class="fas fa-copyright"></i> 2022 ESWARAMOORTHY TEXTILES</p>
+
+    </div>
+
+    <script src="script.js">
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+   
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        
+        var keys=Object.keys(localStorage);
+        var sum=0;
+        var options;
+        function addNew()
+        {
+
+        for(let j=0;j<keys.length;j++)
+        {
+            if(!isNaN(keys[j]))
+            {
+            var bdy=document.getElementById('table-body');
+            var tr=document.createElement('tr');
+            var td6=document.createElement('td');
+           // var td7=document.createElement('td');
+            var a=document.createElement('a');
+            a.setAttribute('onclick','deleteEle(this)');
+            var i=document.createElement('i');
+            i.classList.add('far');
+            i.classList.add('fa-times-circle');
+            td6.appendChild(a);
+            a.appendChild(i);
+            var td1=document.createElement('td');
+            var td2=document.createElement('td');
+            var td3=document.createElement('td');
+            var td4=document.createElement('td');
+            var td5=document.createElement('td');
+            tr.classList.add("tr"+keys[j]);
+            var temp=JSON.parse(localStorage.getItem(keys[j]));
+            console.log(temp);
+           // td7.innerText=j+1;
+            td1.innerText=temp.name;
+            td2.innerText=temp.size;
+            td3.innerText=temp.price;
+            td4.innerText=temp.quan;
+            var v1=temp.price;
+            var v2=temp.quan;
+            var d=v1*v2;
+            td5.innerText=d;
+            bdy.appendChild(tr);
+            tr.appendChild(td6);
+           // tr.appendChild(td7);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            sum=sum+d;
+            }
+
+        }
+        var p1=document.getElementById('price-tag');
+        var p2=document.getElementById('total-price-tag');
+        p1.innerText=sum;
+        p2.innerText=sum;
+        options = {
+            "key": "rzp_live_sC0vql3penTACl", 
+            "amount": sum+"00", 
+            "currency":"INR",
+            "name": "Eswaramoothy Textiles",
+            "description": "Cart Transaction",
+            "image": "https://example.com/your_logo",
+            "account_id": "JXuWVvb6bnctGJ",
+            "handler": function (response){
+                console.log(response);
+            },
+            "prefill": {
+                
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+    }
+
+    var state=0;
+    function offer(){
+    if(state>0)
+    {
+        alert("Can't apply multiple coupons..!")
+        return;
+    }
+    var c=document.getElementById('coupon-code');
+    if(c.value=="KEC2023"&&state==0)
+    {
+        alert("10% Discount Offer applied successfully");
+        sum=sum-sum*(10/100);
+        state=1;
+    }
+    else if(c.value=="WIN2023"&&state==0)
+    {
+        alert("15% Discount Offer applied successfully");
+        sum=sum-sum*(15/100);
+        state=1;
+    }
+    else if(c.value=="WO2023"&&state==0)
+    {
+        alert("10% Discount Offer applied successfully");
+        sum=sum-sum*(10/100);
+        state=1;
+    } 
+    else if(c.value=="NEW2023"&&state==0)
+    {
+        alert("30% Discount Offer applied successfully");
+        sum=sum-sum*(30/100);
+        state=1;
+    }
+    else{
+        alert("Invalid coupon");
+        return;
+    }
+
+    
+    var p1=document.getElementById('price-tag');
+    var p2=document.getElementById('total-price-tag');
+    var p3=document.getElementById('applied');
+    p1.innerText=sum.toFixed(2);
+    p2.innerText=sum.toFixed(2);
+    p3.innerText=" COUPON APPLIED";
+    p3.style.color="green"
+    console.log(sum);
+    let options = {
+            "key": "rzp_live_sC0vql3penTACl", 
+            "amount": sum*100, 
+            "currency":"INR",
+            "name": "Eswaramoothy Textiles",
+            "description": "Cart Transaction",
+            "image": "https://example.com/your_logo",
+            "handler": function (response){
+                console.log(response);
+            },
+            "prefill": {
+                
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+} 
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+function offer(){
+    if(state>0)
+    {
+        alert("Can't apply multiple coupons..!")
+        return;
+    }
+    var c=document.getElementById('coupon-code');
+    if(c.value=="KEC2023"&&state==0)
+    {
+        alert("10% Discount Offer applied successfully");
+        sum=sum-sum*(10/100);
+        state=1;
+    }
+    else if(c.value=="WIN2023"&&state==0)
+    {
+        alert("15% Discount Offer applied successfully");
+        sum=sum-sum*(15/100);
+        state=1;
+    }
+    else if(c.value=="WO2023"&&state==0)
+    {
+        alert("10% Discount Offer applied successfully");
+        sum=sum-sum*(10/100);
+        state=1;
+    } 
+    else if(c.value=="NEW2023"&&state==0)
+    {
+        alert("30% Discount Offer applied successfully");
+        sum=sum-sum*(30/100);
+        state=1;
+    }
+    else{
+        alert("Invalid coupon");
+        return;
+    }
+    
+    var p1=document.getElementById('price-tag');
+    var p2=document.getElementById('total-price-tag');
+    var p3=document.getElementById('applied');
+    p1.innerText=sum.toFixed(2);
+    p2.innerText=sum.toFixed(2);
+    p3.innerText=" COUPON APPLIED";
+    p3.style.color="green"
+    console.log(sum);
+} -->
